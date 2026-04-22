@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #101828;
+    color: #f8fafc;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.phone-app {
+    min-height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at top, #26395f, #101828 58%);
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 22px;
+}
+
+.screen.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-bar {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 14px;
+    z-index: 10;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.connected {
+    background: #22c55e;
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
+}
+
+.status-dot.disconnected {
+    background: #ef4444;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.9);
+}
+
+.panel {
+    width: min(520px, 100%);
+    padding: 26px;
+    border-radius: 28px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.subtitle {
+    margin-top: 8px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #cbd5e1;
+}
+
+.button-row {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.primary-btn,
+.secondary-btn,
+.wide-btn,
+.start-btn,
+.character-btn,
+.control-btn {
+    border-radius: 18px;
+    min-height: 58px;
+    padding: 14px 16px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.primary-btn {
+    background: #16a34a;
+}
+
+.secondary-btn {
+    background: #dc2626;
+}
+
+.character-panel {
+    margin: 24px 0;
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.character-btn {
+    background: #334155;
+}
+
+.character-btn.active {
+    background: #2563eb;
+    outline: 3px solid rgba(147, 197, 253, 0.7);
+}
+
+.wide-btn {
+    width: 100%;
+    background: #2563eb;
+}
+
+.wide-btn.muted {
+    margin-top: 20px;
+    background: #475569;
+}
+
+.controls-panel {
+    width: min(760px, 100%);
+}
+
+.start-btn {
+    display: block;
+    width: min(320px, 100%);
+    margin: 24px auto;
+    background: #f97316;
+    font-size: 22px;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.control-btn {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.control-btn span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.control-btn strong {
+    font-size: clamp(30px, 8vw, 52px);
+    letter-spacing: 0.04em;
+}
+
+.jump-btn {
+    background: #2563eb;
+}
+
+.crouch-btn {
+    background: #7c3aed;
+}
+
+.control-btn:active,
+.primary-btn:active,
+.secondary-btn:active,
+.wide-btn:active,
+.start-btn:active,
+.character-btn:active {
+    transform: scale(0.96);
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .screen {
+        padding: 14px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .start-btn {
+        margin: 14px auto;
+        min-height: 48px;
+    }
+
+    .control-btn {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 520px) {
+    .button-row,
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .control-btn {
+        min-height: 140px;
+    }
+}

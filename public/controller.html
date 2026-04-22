@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dino Controller</title>
+    <link rel="stylesheet" href="controller.css">
+</head>
+<body>
+    <main class="phone-app">
+        <section id="dashboard-screen" class="screen active">
+            <div class="status-bar">
+                <span class="status-dot disconnected" data-status-dot></span>
+                <span data-status-text>Deconectat</span>
+            </div>
+
+            <div class="panel">
+                <h1>Controller Dino</h1>
+                <p class="subtitle">Dashboard</p>
+
+                <div class="button-row">
+                    <button id="connect-btn" class="primary-btn">Conecteaza controller</button>
+                    <button id="disconnect-btn" class="secondary-btn">Deconecteaza</button>
+                </div>
+
+                <div class="character-panel">
+                    <h2>Alege caracterul</h2>
+                    <div class="character-grid">
+                        <button class="character-btn active" data-character="dino">Dino</button>
+                        <button class="character-btn" data-character="robot">Robot</button>
+                        <button class="character-btn" data-character="cat">Pisica</button>
+                    </div>
+                </div>
+
+                <button id="go-controls-btn" class="wide-btn">Mergi la controale</button>
+            </div>
+        </section>
+
+        <section id="controls-screen" class="screen">
+            <div class="status-bar">
+                <span class="status-dot disconnected" data-status-dot></span>
+                <span data-status-text>Deconectat</span>
+            </div>
+
+            <div class="panel controls-panel">
+                <h1>Controale</h1>
+
+                <button id="start-game-btn" class="start-btn">Start Game</button>
+
+                <div class="controls-grid">
+                    <button id="jump-btn" class="control-btn jump-btn">
+                        <span>SPACE</span>
+                        <strong>JUMP</strong>
+                    </button>
+
+                    <button id="crouch-btn" class="control-btn crouch-btn">
+                        <span>ARROW DOWN</span>
+                        <strong>CROUCH</strong>
+                    </button>
+                </div>
+
+                <button id="back-dashboard-btn" class="wide-btn muted">Inapoi la dashboard</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>

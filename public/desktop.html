@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Dino Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+
+<h1 class="text-gray-600 font-mono text-2xl mb-4">Dino Game</h1>
+<canvas id="game" width="800" height="250"
+        class="border-2 border-gray-600"></canvas>
+
+<div class="mt-6 p-4 border border-gray-300 rounded-lg bg-white text-gray-600 font-mono text-sm">
+    <h2 class="text-lg mb-3">Setari</h2>
+
+    <div class="flex flex-wrap gap-4">
+        <label>Dificultate:
+            <select id="difficulty" class="border border-gray-400 rounded px-2 py-1 bg-white">
+                <option value="easy">Usor</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Greu</option>
+            </select>
+        </label>
+
+        <label>Caracter:
+            <select id="character" class="border border-gray-400 rounded px-2 py-1 bg-white">
+                <option value="dino">Dino</option>
+                <option value="robot">Robot</option>
+                <option value="cat">Pisica</option>
+            </select>
+        </label>
+
+        <label>Tema:
+            <select id="theme" class="border border-gray-400 rounded px-2 py-1 bg-white">
+                <option value="day">Zi</option>
+                <option value="night">Noapte</option>
+                <option value="sunset">Apus</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="flex flex-wrap gap-4 mt-3 items-center">
+        <label>
+            <input type="checkbox" id="sound" checked> Sunet
+        </label>
+
+        <label>Volum:
+            <input type="range" id="volume" min="0" max="100" value="50" class="w-24">
+            <span id="volume-label">50%</span>
+        </label>
+    </div>
+</div>
+
+<script src="config.js"></script>
+<script src="player.js"></script>
+<script src="obstacles.js"></script>
+<script src="audio.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="game.js"></script>
+<script src="settings.js"></script>
+
+
+</body>
+</html>
